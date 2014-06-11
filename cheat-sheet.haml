@@ -1,0 +1,195 @@
+!!! 5
+%html
+  %head
+    :scss
+      dd {
+        display: inline-block;
+        margin: 0.5em 0.25em;
+        border: 1px solid #AAA;
+        border-radius: 0.2em;
+        box-shadow: 1px 2px 2px #DDD;
+        background-color: #F9F9F9;
+        background-image: -moz-linear-gradient(top, #EEE, #F9F9F9, #EEE);
+        background-image: -ms-linear-gradient(top, #EEE, #F9F9F9, #EEE);
+        background-image: -webkit-linear-gradient(top, #EEE, #F9F9F9, #EEE);
+        background-image: linear-gradient(top, #EEE, #F9F9F9, #EEE);
+        padding: 0.3em 0.4em;
+        font-size: 1.15em;
+        //width:1em;
+        height:1em;
+        line-height:1em;
+        text-align: center;
+      }
+      dt {
+        font-family:Helvetica;
+      }
+      kbd {
+        font-family: Monaco;
+        text-transform:uppercase;
+        &.arrow {
+          font-family: sans-serif;
+        }
+        &.shift::after {
+          content: '⇧';
+        }
+        &.command::after {
+          content: '⌘';
+        }
+        &.control::after {
+          content: '⌃';
+        }
+        &.option::after {
+          content: '⌥';
+        }
+        &.escape::after {
+          content: '⎋';
+        }
+        &::before {
+          content: '·';
+          color: #aaa;
+          font-family:Helvetica;
+        }
+        &:first-of-type::before {
+          content: '';
+        }
+      }
+      dd:hover {
+        kbd::after {
+          text-transform: uppercase;
+          font-variant: small-caps;
+          font-size: 0.8em;
+          color:#555;
+        }
+        kbd.shift::after {
+          content: 'shift';
+        }
+        kbd.command::after {
+          content: 'command';
+        }
+        kbd.control::after {
+          content: 'control';
+        }
+        kbd.option::after {
+          content: 'option';
+        }
+        kbd.escape::after {
+          content: 'escape';
+        }
+      }
+  %body
+    %h2 TextMate
+    %dl
+      %dt Select Line
+      %dd<
+        %kbd.shift>
+        %kbd.command>
+        %kbd l
+      %dt Move Selection Up
+      %dd<
+        %kbd.control>
+        %kbd.command>
+        %kbd.arrow ↑
+      %dt Move Selection Down
+      %dd<
+        %kbd.control>
+        %kbd.command>
+        %kbd.arrow ↓
+      %dt Shift Right
+      %dd<
+        %kbd.command>
+        %kbd [
+      %dt Shift Left
+      %dd<
+        %kbd.command>
+        %kbd ]
+      %dt Go to File
+      %dd<
+        %kbd.command>
+        %kbd t
+      %dt Comment
+      %dd<
+        %kbd.command>
+        %kbd /
+      %dt Close Other Tabs
+      %dd<
+        %kbd.control>
+        %kbd.command>
+        %kbd w
+      %dt Hide/Show Drawer
+      %dd<
+        %kbd.control>
+        %kbd.option>
+        %kbd.command>
+        %kbd d
+      %dt Completion
+      %dd<
+        %kbd.escape>
+      %dt Multiple Carets
+      %dd<
+        %kbd.command>
+        %kbd click
+
+    %h2 OSX
+    %dl
+      %dt Screenshot Snippet (Saved to Desktop)
+      %dd<
+        %kbd.shift>
+        %kbd.command>
+        %kbd 4
+      %dt Screenshot Snippet (to clipboard)
+      %dd<
+        %kbd.shift>
+        %kbd.control>
+        %kbd.command>
+        %kbd 4
+      %dt Screenshot (Saved to Desktop)
+      %dd<
+        %kbd.shift>
+        %kbd.command>
+        %kbd 3
+      %dt Screenshot (to clipboard)
+      %dd<
+        %kbd.shift>
+        %kbd.control>
+        %kbd.command>
+        %kbd 3
+      %dt Skip word (forward)
+      %dd<
+        %kbd.option>
+        %kbd.arrow →
+      %dt Skip word (back)
+      %dd<
+        %kbd.option>
+        %kbd.arrow ←
+      %dt Dictionary (pointer over word)
+      %dd<
+        %kbd.control>
+        %kbd.command>
+        %kbd d
+      %dt Preferences
+      %dd<
+        %kbd.command>
+        %kbd ,
+      %dt Move focus to the menu bar
+      %dd<
+        %kbd.control>
+        %kbd f2
+      %dt Move focus to status menus
+      %dd<
+        %kbd.control>
+        %kbd f8
+      %dt Hide/Show Dock
+      %dd<
+        %kbd.option>
+        %kbd.command>
+        %kbd d
+      %dt Paste and match style
+      %dd<
+        %kbd.shift>
+        %kbd.option>
+        %kbd.command>
+        %kbd v
+      %dt Spotlight
+      %dd<
+        %kbd.command>
+        %kbd space
