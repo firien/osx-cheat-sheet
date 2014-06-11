@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @charset "UTF-8";
+      dd {
+        display: inline-block;
+        margin: 0.5em 0.25em;
+        border: 1px solid #AAA;
+        border-radius: 0.2em;
+        box-shadow: 1px 2px 2px #DDD;
+        background-color: #F9F9F9;
+        background-image: -moz-linear-gradient(top, #eeeeee, #f9f9f9, #eeeeee);
+        background-image: -ms-linear-gradient(top, #eeeeee, #f9f9f9, #eeeeee);
+        background-image: -webkit-linear-gradient(top, #eeeeee, #f9f9f9, #eeeeee);
+        background-image: linear-gradient(top, #eeeeee, #f9f9f9, #eeeeee);
+        padding: 0.3em 0.4em;
+        font-size: 1.15em;
+        height: 1em;
+        line-height: 1em;
+        text-align: center; }
+      
+      dt {
+        font-family: Helvetica; }
+      
+      kbd {
+        font-family: Monaco;
+        text-transform: uppercase; }
+        kbd.arrow {
+          font-family: sans-serif; }
+        kbd.shift::after {
+          content: '⇧'; }
+        kbd.command::after {
+          content: '⌘'; }
+        kbd.control::after {
+          content: '⌃'; }
+        kbd.option::after {
+          content: '⌥'; }
+        kbd.escape::after {
+          content: '⎋'; }
+        kbd::before {
+          content: '·';
+          color: #aaa;
+          font-family: Helvetica; }
+        kbd:first-of-type::before {
+          content: ''; }
+      
+      dd:hover kbd::after {
+        text-transform: uppercase;
+        font-variant: small-caps;
+        font-size: 0.8em;
+        color: #555; }
+      dd:hover kbd.shift::after {
+        content: 'shift'; }
+      dd:hover kbd.command::after {
+        content: 'command'; }
+      dd:hover kbd.control::after {
+        content: 'control'; }
+      dd:hover kbd.option::after {
+        content: 'option'; }
+      dd:hover kbd.escape::after {
+        content: 'escape'; }
+    </style>
+  </head>
+  <body>
+    <h2>TextMate</h2>
+    <dl>
+      <dt>Select Line</dt>
+      <dd><kbd class='shift'></kbd><kbd class='command'></kbd><kbd>l</kbd></dd>
+      <dt>Move Selection Up</dt>
+      <dd><kbd class='control'></kbd><kbd class='command'></kbd><kbd class='arrow'>↑</kbd></dd>
+      <dt>Move Selection Down</dt>
+      <dd><kbd class='control'></kbd><kbd class='command'></kbd><kbd class='arrow'>↓</kbd></dd>
+      <dt>Shift Right</dt>
+      <dd><kbd class='command'></kbd><kbd>[</kbd></dd>
+      <dt>Shift Left</dt>
+      <dd><kbd class='command'></kbd><kbd>]</kbd></dd>
+      <dt>Go to File</dt>
+      <dd><kbd class='command'></kbd><kbd>t</kbd></dd>
+      <dt>Comment</dt>
+      <dd><kbd class='command'></kbd><kbd>/</kbd></dd>
+      <dt>Close Other Tabs</dt>
+      <dd><kbd class='control'></kbd><kbd class='command'></kbd><kbd>w</kbd></dd>
+      <dt>Hide/Show Drawer</dt>
+      <dd><kbd class='control'></kbd><kbd class='option'></kbd><kbd class='command'></kbd><kbd>d</kbd></dd>
+      <dt>Completion</dt>
+      <dd><kbd class='escape'></kbd></dd>
+      <dt>Multiple Carets</dt>
+      <dd><kbd class='command'></kbd><kbd>click</kbd></dd>
+    </dl>
+    <h2>OSX</h2>
+    <dl>
+      <dt>Screenshot Snippet (Saved to Desktop)</dt>
+      <dd><kbd class='shift'></kbd><kbd class='command'></kbd><kbd>4</kbd></dd>
+      <dt>Screenshot Snippet (to clipboard)</dt>
+      <dd><kbd class='shift'></kbd><kbd class='control'></kbd><kbd class='command'></kbd><kbd>4</kbd></dd>
+      <dt>Screenshot (Saved to Desktop)</dt>
+      <dd><kbd class='shift'></kbd><kbd class='command'></kbd><kbd>3</kbd></dd>
+      <dt>Screenshot (to clipboard)</dt>
+      <dd><kbd class='shift'></kbd><kbd class='control'></kbd><kbd class='command'></kbd><kbd>3</kbd></dd>
+      <dt>Skip word (forward)</dt>
+      <dd><kbd class='option'></kbd><kbd class='arrow'>→</kbd></dd>
+      <dt>Skip word (back)</dt>
+      <dd><kbd class='option'></kbd><kbd class='arrow'>←</kbd></dd>
+      <dt>Dictionary (pointer over word)</dt>
+      <dd><kbd class='control'></kbd><kbd class='command'></kbd><kbd>d</kbd></dd>
+      <dt>Preferences</dt>
+      <dd><kbd class='command'></kbd><kbd>,</kbd></dd>
+      <dt>Move focus to the menu bar</dt>
+      <dd><kbd class='control'></kbd><kbd>f2</kbd></dd>
+      <dt>Move focus to status menus</dt>
+      <dd><kbd class='control'></kbd><kbd>f8</kbd></dd>
+      <dt>Hide/Show Dock</dt>
+      <dd><kbd class='option'></kbd><kbd class='command'></kbd><kbd>d</kbd></dd>
+      <dt>Paste and match style</dt>
+      <dd><kbd class='shift'></kbd><kbd class='option'></kbd><kbd class='command'></kbd><kbd>v</kbd></dd>
+      <dt>Spotlight</dt>
+      <dd><kbd class='command'></kbd><kbd>space</kbd></dd>
+    </dl>
+  </body>
+</html>
