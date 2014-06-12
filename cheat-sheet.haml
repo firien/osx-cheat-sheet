@@ -1,6 +1,8 @@
 !!! 5
 %html
   %head
+    %meta{content: 'text/html;charset=UTF-8', :'http-equiv' => 'content-type'}
+    %meta{name: 'viewport', content: 'initial-scale=1'}
     :scss
       dd {
         display: inline-block;
@@ -24,7 +26,7 @@
         font-family:Helvetica;
       }
       kbd {
-        font-family: Monaco;
+        font-family: sans-serif;
         text-transform:uppercase;
         &.arrow {
           font-family: sans-serif;
@@ -44,10 +46,21 @@
         &.escape::after {
           content: '⎋';
         }
+        &.space::after {
+          content: '␣';
+        }
+        &.tab::after {
+          content: '⇥';
+        }
+        &.del::after {
+          content: '⌫';
+        }
+        &.return::after {
+          content: '↵';
+        }
         &::before {
           content: '·';
           color: #aaa;
-          font-family:Helvetica;
         }
         &:first-of-type::before {
           content: '';
@@ -74,6 +87,18 @@
         }
         kbd.escape::after {
           content: 'escape';
+        }
+        kbd.space::after {
+          content: 'space';
+        }
+        kbd.tab::after {
+          content: 'tab';
+        }
+        kbd.del::after {
+          content: 'del';
+        }
+        kbd.return::after {
+          content: 'return';
         }
       }
   %body
@@ -192,4 +217,4 @@
       %dt Spotlight
       %dd<
         %kbd.command>
-        %kbd space
+        %kbd.space
