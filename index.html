@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content='text/html;charset=UTF-8' http-equiv='content-type'>
+    <meta content='initial-scale=1' name='viewport'>
     <style>
       @charset "UTF-8";
       dd {
@@ -24,7 +26,7 @@
         font-family: Helvetica; }
       
       kbd {
-        font-family: Monaco;
+        font-family: sans-serif;
         text-transform: uppercase; }
         kbd.arrow {
           font-family: sans-serif; }
@@ -38,10 +40,17 @@
           content: '⌥'; }
         kbd.escape::after {
           content: '⎋'; }
+        kbd.space::after {
+          content: '␣'; }
+        kbd.tab::after {
+          content: '⇥'; }
+        kbd.del::after {
+          content: '⌫'; }
+        kbd.return::after {
+          content: '↵'; }
         kbd::before {
           content: '·';
-          color: #aaa;
-          font-family: Helvetica; }
+          color: #aaa; }
         kbd:first-of-type::before {
           content: ''; }
       
@@ -60,6 +69,14 @@
         content: 'option'; }
       dd:hover kbd.escape::after {
         content: 'escape'; }
+      dd:hover kbd.space::after {
+        content: 'space'; }
+      dd:hover kbd.tab::after {
+        content: 'tab'; }
+      dd:hover kbd.del::after {
+        content: 'del'; }
+      dd:hover kbd.return::after {
+        content: 'return'; }
     </style>
   </head>
   <body>
@@ -115,7 +132,7 @@
       <dt>Paste and match style</dt>
       <dd><kbd class='shift'></kbd><kbd class='option'></kbd><kbd class='command'></kbd><kbd>v</kbd></dd>
       <dt>Spotlight</dt>
-      <dd><kbd class='command'></kbd><kbd>space</kbd></dd>
+      <dd><kbd class='command'></kbd><kbd class='space'></kbd></dd>
     </dl>
   </body>
 </html>
