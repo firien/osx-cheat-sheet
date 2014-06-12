@@ -4,6 +4,16 @@
     %meta{content: 'text/html;charset=UTF-8', :'http-equiv' => 'content-type'}
     %meta{name: 'viewport', content: 'initial-scale=1'}
     :scss
+      #flex {
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        &>div {
+          padding-left:0.5em;
+          min-width: 18em;
+        }
+      }
       dd {
         display: inline-block;
         margin: 0.5em 0.25em;
@@ -58,6 +68,9 @@
         &.return::after {
           content: '↵';
         }
+        &.eject::after {
+          content: '⏏';
+        }
         &::before {
           content: '·';
           color: #aaa;
@@ -100,121 +113,181 @@
         kbd.return::after {
           content: 'return';
         }
+        kbd.eject::after {
+          content: 'eject';
+        }
       }
   %body
-    %h2 TextMate
-    %dl
-      %dt Select Line
-      %dd<
-        %kbd.shift>
-        %kbd.command>
-        %kbd l
-      %dt Move Selection Up
-      %dd<
-        %kbd.control>
-        %kbd.command>
-        %kbd.arrow ↑
-      %dt Move Selection Down
-      %dd<
-        %kbd.control>
-        %kbd.command>
-        %kbd.arrow ↓
-      %dt Shift Right
-      %dd<
-        %kbd.command>
-        %kbd [
-      %dt Shift Left
-      %dd<
-        %kbd.command>
-        %kbd ]
-      %dt Go to File
-      %dd<
-        %kbd.command>
-        %kbd t
-      %dt Comment
-      %dd<
-        %kbd.command>
-        %kbd /
-      %dt Close Other Tabs
-      %dd<
-        %kbd.control>
-        %kbd.command>
-        %kbd w
-      %dt Hide/Show Drawer
-      %dd<
-        %kbd.control>
-        %kbd.option>
-        %kbd.command>
-        %kbd d
-      %dt Completion
-      %dd<
-        %kbd.escape>
-      %dt Multiple Carets
-      %dd<
-        %kbd.command>
-        %kbd click
-
-    %h2 OSX
-    %dl
-      %dt Screenshot Snippet (Saved to Desktop)
-      %dd<
-        %kbd.shift>
-        %kbd.command>
-        %kbd 4
-      %dt Screenshot Snippet (to clipboard)
-      %dd<
-        %kbd.shift>
-        %kbd.control>
-        %kbd.command>
-        %kbd 4
-      %dt Screenshot (Saved to Desktop)
-      %dd<
-        %kbd.shift>
-        %kbd.command>
-        %kbd 3
-      %dt Screenshot (to clipboard)
-      %dd<
-        %kbd.shift>
-        %kbd.control>
-        %kbd.command>
-        %kbd 3
-      %dt Skip word (forward)
-      %dd<
-        %kbd.option>
-        %kbd.arrow →
-      %dt Skip word (back)
-      %dd<
-        %kbd.option>
-        %kbd.arrow ←
-      %dt Dictionary (pointer over word)
-      %dd<
-        %kbd.control>
-        %kbd.command>
-        %kbd d
-      %dt Preferences
-      %dd<
-        %kbd.command>
-        %kbd ,
-      %dt Move focus to the menu bar
-      %dd<
-        %kbd.control>
-        %kbd f2
-      %dt Move focus to status menus
-      %dd<
-        %kbd.control>
-        %kbd f8
-      %dt Hide/Show Dock
-      %dd<
-        %kbd.option>
-        %kbd.command>
-        %kbd d
-      %dt Paste and match style
-      %dd<
-        %kbd.shift>
-        %kbd.option>
-        %kbd.command>
-        %kbd v
-      %dt Spotlight
-      %dd<
-        %kbd.command>
-        %kbd.space
+    #flex
+      %div
+        %h2 TextMate
+        %dl
+          %dt Select Line
+          %dd<
+            %kbd.shift>
+            %kbd.command>
+            %kbd l
+          %dt Duplicate Line
+          %dd<
+            %kbd.control>
+            %kbd.shift>
+            %kbd d
+          %dt Move Selection Up
+          %dd<
+            %kbd.control>
+            %kbd.command>
+            %kbd.arrow ↑
+          %dt Move Selection Down
+          %dd<
+            %kbd.control>
+            %kbd.command>
+            %kbd.arrow ↓
+          %dt Shift Right
+          %dd<
+            %kbd.command>
+            %kbd [
+          %dt Shift Left
+          %dd<
+            %kbd.command>
+            %kbd ]
+          %dt Go to File
+          %dd<
+            %kbd.command>
+            %kbd t
+          %dt Comment Line
+          %dd<
+            %kbd.command>
+            %kbd /
+          %dt Insert Block Comment
+          %dd<
+            %kbd.option>
+            %kbd.command>
+            %kbd /
+          %dt Insert Comment Banner
+          %dd<
+            %kbd.control>
+            %kbd.shift>
+            %kbd b
+          %dt Close Other Tabs
+          %dd<
+            %kbd.control>
+            %kbd.command>
+            %kbd w
+          %dt Hide/Show Drawer
+          %dd<
+            %kbd.control>
+            %kbd.option>
+            %kbd.command>
+            %kbd d
+          %dt Completion
+          %dd<
+            %kbd.escape>
+          %dt Multiple Carets
+          %dd<
+            %kbd.command>
+            %kbd click
+          %dt ?
+          %dd<
+            %kbd.command>
+            %kbd.return
+          %dt Project Wide Search
+          %dd<
+            %kbd.shift>
+            %kbd.command>
+            %kbd f
+      %div
+        %h2 OSX
+        %dl
+          %dt Screenshot Snippet (Saved to Desktop)
+          %dd<
+            %kbd.shift>
+            %kbd.command>
+            %kbd 4
+          %dt Screenshot Snippet (to clipboard)
+          %dd<
+            %kbd.shift>
+            %kbd.control>
+            %kbd.command>
+            %kbd 4
+          %dt Screenshot (Saved to Desktop)
+          %dd<
+            %kbd.shift>
+            %kbd.command>
+            %kbd 3
+          %dt Screenshot (to clipboard)
+          %dd<
+            %kbd.shift>
+            %kbd.control>
+            %kbd.command>
+            %kbd 3
+          %dt Skip word (forward)
+          %dd<
+            %kbd.option>
+            %kbd.arrow →
+          %dt Skip word (back)
+          %dd<
+            %kbd.option>
+            %kbd.arrow ←
+          %dt Dictionary (pointer over word)
+          %dd<
+            %kbd.control>
+            %kbd.command>
+            %kbd d
+          %dt Preferences
+          %dd<
+            %kbd.command>
+            %kbd ,
+          %dt Move focus to the menu bar
+          %dd<
+            %kbd.control>
+            %kbd f2
+          %dt Move focus to status menus
+          %dd<
+            %kbd.control>
+            %kbd f8
+          %dt Hide/Show Dock
+          %dd<
+            %kbd.option>
+            %kbd.command>
+            %kbd d
+          %dt Paste and match style
+          %dd<
+            %kbd.shift>
+            %kbd.option>
+            %kbd.command>
+            %kbd v
+          %dt Spotlight
+          %dd<
+            %kbd.command>
+            %kbd.space
+          %dt Application Switcher
+          %dd<
+            %kbd.command>
+            %kbd.tab
+      %div
+        %h2 Basic Text
+        %dl
+          %dt Copy
+          %dd<
+            %kbd.command>
+            %kbd c
+          %dt Paste
+          %dd<
+            %kbd.command>
+            %kbd v
+          %dt Undo
+          %dd<
+            %kbd.command>
+            %kbd z
+          %dt Home
+          %dd<
+            %kbd.control>
+            %kbd a
+          %dt End
+          %dd<
+            %kbd.control>
+            %kbd e
+          %dt Delete Line (from cursor)
+          %dd<
+            %kbd.control>
+            %kbd k
